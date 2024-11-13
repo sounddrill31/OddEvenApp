@@ -2,7 +2,7 @@
 
 Simple C# App built using Avalonia UI. It checks the number entered and sees if it is Odd or Even
 
-![Screenshot of App](https://github.com/user-attachments/assets/ded065ba-371b-4549-8b2e-a9936330160c)
+![App Screenshot](https://github.com/user-attachments/assets/1a474d71-768d-4122-a796-f47ec1158fb8)
 
 
 ## Install
