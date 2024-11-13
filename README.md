@@ -1,26 +1,26 @@
-# Vowel Count App [![Build and Upload .NET Project](https://github.com/sounddrill31/VowelCountApp_CrossPlatform/actions/workflows/main.yml/badge.svg)](https://github.com/sounddrill31/VowelCountApp_CrossPlatform/actions/workflows/main.yml)
+# Odd Even App [![Build and Upload .NET Project](https://github.com/sounddrill31/OddEvenApp/actions/workflows/main.yml/badge.svg)](https://github.com/sounddrill31/OddEvenApp/actions/workflows/main.yml)
 
-Simple C# App built using Avalonia UI. It checks the letters in the string entered and sees how many vowels are present(AEIOUaeiou)
+Simple C# App built using Avalonia UI. It checks the number entered and sees if it is Odd or Even
 
 ![Screenshot of App](https://github.com/user-attachments/assets/ded065ba-371b-4549-8b2e-a9936330160c)
 
 
 ## Install
 ### Windows/Linux
-- Go to [Releases](https://github.com/sounddrill31/VowelCountApp_CrossPlatform/releases/latest)
-- Click on the zip file for the OS you're using(VowelCountApp-ubuntu-latest.zip for 64bit Linux, VowelCountApp-windows-latest.zip for 64bit Windows)
-- Extract the Zip and run the exe file VowelCountApp.Destkop.exe(./VowelCountApp.Desktop for linux users)
+- Go to [Releases](https://github.com/sounddrill31/OddEvenApp/releases/latest)
+- Click on the zip file for the OS you're using(OddEvenApp-ubuntu-latest.zip for 64bit Linux, OddEvenApp-windows-latest.zip for 64bit Windows)
+- Extract the Zip and run the exe file OddEvenApp.Destkop.exe(./OddEvenApp.Desktop for linux users)
 
 ### Android
-- Go to [Releases](https://github.com/sounddrill31/VowelCountApp_CrossPlatform/releases/latest)
+- Go to [Releases](https://github.com/sounddrill31/OddEvenApp/releases/latest)
 - Download the signed APK and install it on your device
 - Open the App
 
 ## Building
 - Git clone and Enter the folder
   ```bash
-  git clone https://github.com/sounddrill31/VowelCountApp_CrossPlatform;
-  cd VowelCountApp_CrossPlatform
+  git clone https://github.com/sounddrill31/OddEvenApp;
+  cd OddEvenApp
   ```
 - Set up a .NET 8.0 Environment using the [install script](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script).
 - Run the restore command to install deps quickly:
@@ -29,13 +29,13 @@ Simple C# App built using Avalonia UI. It checks the letters in the string enter
   ```
 - Compile the Program
   ```bash
-  dotnet build VowelCountApp/VowelCountApp.Desktop --configuration Release 
+  dotnet build OddEvenApp/OddEvenApp.Desktop --configuration Release 
   ```
     - Remember to replace Desktop with Android, iOS, or Browser if you're building for a different target.
     - If you're building for Android, remember to set up your [Android SDK environment](https://docs.avaloniaui.net/docs/0.10.x/tutorials/developing-for-mobile/android/setting-up-your-developer-environment-for-android)
 - Package the Program
   ```bash
-  dotnet publish VowelCountApp/VowelCountApp.Desktop --configuration Release --output ./output
+  dotnet publish OddEvenApp/OddEvenApp.Desktop --configuration Release --output ./output
   ```
 - Retrieve the Built Files from the output folder
 

@@ -45,27 +45,27 @@ jobs:
     - name: Build
       if: matrix.os != 'ubuntu-24.04' 
       # 24.04 is android 
-      run: dotnet build VowelCountApp/VowelCountApp.Desktop --configuration Release #--no-restore
+      run: dotnet build OddEvenApp/OddEvenApp.Desktop --configuration Release #--no-restore
 
     - name: Publish
       if: matrix.os != 'ubuntu-24.04' 
       # 24.04 is android 
-      run: dotnet publish VowelCountApp/VowelCountApp.Desktop --configuration Release --output ./output
+      run: dotnet publish OddEvenApp/OddEvenApp.Desktop --configuration Release --output ./output
 
     - name: Build and Publish For android
       if: matrix.os == 'ubuntu-24.04' 
       # 24.04 is android 
       run: |
-       dotnet build VowelCountApp/VowelCountApp.Android --configuration Release
-       dotnet publish VowelCountApp/VowelCountApp.Android --configuration Release --output ./output
+       dotnet build OddEvenApp/OddEvenApp.Android --configuration Release
+       dotnet publish OddEvenApp/OddEvenApp.Android --configuration Release --output ./output
 
     - name: Zip folder on Linux 
       if: matrix.os == 'ubuntu-latest'
-      run: zip -r VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip ./output/*
+      run: zip -r OddEvenApp-${{ matrix.os }}-${{ github.run_id }}.zip ./output/*
 
     - name: Zip folder on Windows
       if: matrix.os == 'windows-latest'
-      run: powershell -Command "Compress-Archive -Path 'output/*' -DestinationPath 'VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip'"
+      run: powershell -Command "Compress-Archive -Path 'output/*' -DestinationPath 'OddEvenApp-${{ matrix.os }}-${{ github.run_id }}.zip'"
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
@@ -77,10 +77,10 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
           files: |
-            VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip
+            OddEvenApp-${{ matrix.os }}-${{ github.run_id }}.zip
             output/*.apk
           #android doesn't need Zipping, so direct upload
-          name: VowelCountApp-${{ github.run_id }}
+          name: OddEvenApp-${{ github.run_id }}
           tag_name: ${{ github.run_id }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
