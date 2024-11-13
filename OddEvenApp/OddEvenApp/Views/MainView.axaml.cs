@@ -10,28 +10,36 @@ public partial class MainView : UserControl
     {
         InitializeComponent();
     }
+
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
         //throw new System.NotImplementedException();
-        string str1, str2;
-        int str1len, vcount = 0;
-        str1 = TextBoxString.Text;
-        str1len = str1.Length;
-
-        for (int i = 0; i < str1len; i++)
+        if (TextBoxString.Text != null && int.Parse(TextBoxString.Text) < 10000 )//<= sizeof(int))
         {
-            str2 = str1.Substring(i, 1);
-            if ((str2 == "a") || (str2 == "e") || (str2 == "i") || (str2 == "o") || (str2 == "u") || (str2 == "A") ||
-                (str2 == "E") || (str2 == "I") || (str2 == "O") || (str2 == "U"))
-            {
-                vcount++;
-            }
+            if (int.Parse(TextBoxString.Text) % 2 == 0)
+                TextBoxRes.Text = "Even";
+            else
+                TextBoxRes.Text = "Odd";
         }
-        TextBoxRes.Text = vcount.ToString();
+        else if (TextBoxString.Text == null)
+        {
+            TextBoxString.Text = "";
+        }
+        else
+        {
+            TextBoxRes.Text = "Error! Overflow";
+        }
     }
 
     private void Button_OnClick_Exit(object? sender, RoutedEventArgs e)
     {
         System.Environment.Exit(0);
+    }
+
+    private void Button_OnClick_Clear(object? sender, RoutedEventArgs e)
+    {
+        TextBoxRes.Text = "";
+        TextBoxString.Text = "";
+        //throw new System.NotImplementedException();
     }
 }
