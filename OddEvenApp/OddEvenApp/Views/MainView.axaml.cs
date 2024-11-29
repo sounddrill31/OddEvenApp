@@ -14,7 +14,7 @@ public partial class MainView : UserControl
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
         //throw new System.NotImplementedException();
-        if (TextBoxString.Text != null && int.Parse(TextBoxString.Text) < 10000 )//<= sizeof(int))
+        if (TextBoxString.Text != null && int.Parse(TextBoxString.Text) < 1000000 )//<= sizeof(int))
         {
             if (int.Parse(TextBoxString.Text) % 2 == 0)
                 TextBoxRes.Text = "Even";
